@@ -1,0 +1,74 @@
+
+<? include ./partials/header ?>
+            <a href="/" class="item">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a href="/blogs/archive" class="item">
+                <i class="archive icon"></i>
+                Archive
+            </a>
+            <a href="/blogs/about-contact" class="item">
+                <i class="building icon"></i>
+                About & Contact
+            </a>
+            <a href="/blogs/new" class="item">
+                <i class="plus square icon"></i>
+                New Post
+            </a>
+        </div>
+    </div>
+
+<? const postUrl = '/blogs/' + blog._id; ?>
+
+<div class="ui main text container">
+
+  <div class="ui huge header">
+    <?= blog.title ?>
+  </div>
+
+  <div class="ui padded segment">
+    <div class="item">
+
+      <img class="ui rounded centered image" src="<?= blog.imageUrl ?>">
+
+      <div class="content">
+        <p><?= blog.created.toDateString() ?> Wriiten by <?= blog.author ?></p>
+      </div>
+
+      <div class="description">
+        <p><?- blog.body ?></p>
+      </div>
+
+      <a class="ui black icon button" href="<?= postUrl ?>/edit">
+        Edit
+        <i class="write icon right"></i>
+      </a>
+
+      <form onsubmit="return confirm('Do you really want delete this post?');" id="delete" action="<?= postUrl ?>?_method=DELETE" method="POST">
+        <button type="submit" class="ui red basic icon button">
+          Delete
+          <i class="bomb icon right"></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // function validate(form) {
+
+
+
+  //   if(!valid) {
+  //       return false;
+  //   }
+  //   else {
+  //       return confirm('Do you really want to delete?');
+  //   }
+  // }
+</script>
+
+<? include ./partials/footer ?>

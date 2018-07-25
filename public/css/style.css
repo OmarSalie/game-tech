@@ -1,0 +1,74 @@
+
+/* GLOBAL */
+
+html {
+  height: inherit;
+}
+
+/* body {
+  background-image: 
+} */
+body { 
+  background: no-repeat center center fixed; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+.container.main {
+  margin-top: 4.7em;
+  margin-bottom: 1.5em;
+}
+
+/* HEADER */
+
+.menu .header i.icon {
+  font-size: 1.8em;
+}
+
+/* INDEX */
+
+i.icon.chevron {
+  font-size: 0.8em;
+}
+
+.content .header a {
+  color: black;
+}
+
+.content .header a:hover {
+  text-decoration: underline;
+}
+
+/* SHOW */
+
+#delete {
+  display: inline;
+}
+
+.footer {
+  position: fixed;
+  text-align: center;
+  max-height: 50px;
+  width: 100%;
+  bottom: 0;
+  background-color: #1b1c1d;
+  color: wheat;
+}
+
+.ui#content{
+  /* padding should be the same as header height */
+  padding-top: 55px;
+  max-width: 1000px !important;
+}
+
+@media (max-width: 768px) {
+  .ui#content{
+    padding-top: 210px;
+  }
+}
+
+.divider {
+  position: relative;
+}

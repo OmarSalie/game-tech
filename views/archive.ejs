@@ -1,0 +1,56 @@
+<? include ./partials/header ?>
+            <a href="/" class="item">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a href="/blogs/archive" class="active item">
+                <i class="archive icon"></i>
+                Archive
+            </a>
+            <a href="/blogs/about-contact" class="item">
+                <i class="building icon"></i>
+                About & Contact
+            </a>
+            <a href="/blogs/new" class="item">
+                <i class="plus square icon"></i>
+                New Post
+            </a>
+            
+        </div>
+    </div>
+
+    <div class="ui main text container" id="content">
+
+        <div class="ui huge block header">
+            Archives
+        </div>
+
+        <div class="ui segment">
+            <div class="ui items">
+
+                <? blogs.forEach(function(blog) { ?>
+
+                    <? const postUrl = '/blogs/' + blog._id; ?>
+
+                        <div class="item">
+
+                            <div class="content">
+                                <ul>
+                                    <li class="header">
+                                        <a href="<?= postUrl ?>">
+                                            <?= blog.title ?>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+
+                        </div>
+                        <? }); ?>
+
+            </div>
+        </div>
+    </div>
+    
+
+    <? include ./partials/footer ?>

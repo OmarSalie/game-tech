@@ -1,0 +1,86 @@
+<? include ./partials/header ?>
+            <a href="/" class="active item">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a href="/blogs/archive" class="item">
+                <i class="archive icon"></i>
+                Archive
+            </a>
+            <a href="/blogs/about-contact" class="item">
+                <i class="building icon"></i>
+                About & Contact
+            </a>
+            <a href="/blogs/new" class="item">
+                <i class="plus square icon"></i>
+                New Post
+            </a>
+            
+        </div>
+    </div>
+
+    <div class="ui main text container" id="content">
+
+        <div class="ui huge block header">
+            All Blog Posts
+        </div>
+
+        <div class="ui segment">
+            <div class="ui items">
+                <? var i = 0; ?>
+
+                <? blogs.forEach(function(blog) { ?>
+
+                    <? var postUrl = '/blogs/' + blog._id; ?>
+
+                        <div class="item">
+
+                            <a href="<?= postUrl ?>" class="image">
+                                <img src="<?= blog.imageUrl ?>" href="#">
+                            </a>
+
+                            <div class="content">
+
+                                <div class="header">
+                                    <a href="<?= postUrl ?>">
+                                        <?= blog.title ?>
+                                    </a>
+                                </div>
+
+                                <div class="meta">
+                                    <span>
+                                        <?= blog.created.toDateString() ?>
+                                    </span>
+                                    <span>
+                                        Written by <?= blog.author ?>
+                                    </span>
+                                </div>
+
+                                <div class="description">
+                                    <p>
+                                        <? if(blog.body.length > 250) { ?>
+                                            <?- blog.body.substring(0,250) ?>...
+                                                <? } else { ?>
+                                                    <?- blog.body ?>
+                                                        <? }; ?>
+                                    </p>
+                                </div>
+
+                                <div class="extra">
+                                    <a class="ui small black icon button" href="<?= postUrl ?>">
+                                        Read More
+                                        <i class="right chevron icon"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+    
+                        </div>
+                        <? }); ?>
+
+            </div>
+        </div>
+    </div>
+    
+
+    <? include ./partials/footer ?>

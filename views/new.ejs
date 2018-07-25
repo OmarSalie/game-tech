@@ -1,0 +1,68 @@
+<? include ./partials/header ?>
+            <a href="/" class="item">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a href="/blogs/archive" class="item">
+                <i class="archive icon"></i>
+                Archive
+            </a>
+            <a href="/blogs/about-contact" class="item">
+                <i class="building icon"></i>
+                About & Contact
+            </a>
+            <a href="/blogs/new" class="active item">
+                <i class="plus square icon"></i>
+                New Post
+            </a>
+        </div>
+    </div>
+
+    <div class="ui main text container segment">
+        <div class="ui huge header">
+            New Post
+        </div>
+
+        <form action="/blogs" method="POST" class="ui form">
+
+            <div class="field">
+                <label>Title</label>
+                <input type="text" name="blog[title]" placeholder="Title" required>
+            </div>
+            <div class="field">
+                <label>Author</label>
+                <input type="text" name="blog[author]" placeholder="Author" required>
+            </div>
+            <div class="field">
+                <label>Image URL</label>
+                <input type="text" name="blog[imageUrl]" placeholder="Image URL" required>
+            </div>
+            <div class="field">
+                <label>Post Content</label>
+                <textarea id="summernote" name="blog[body]" required></textarea>
+            </div>
+
+            <button class="ui black icon button">
+      Submit
+      <i class="send icon right"></i>
+    </button>
+
+            <a href="/blogs" class="ui red basic icon button">
+      Cancel
+      <i class="remove icon right"></i>
+    </a>
+
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 200,
+                maxHeight: null,
+                minHeight: null
+            });
+        });
+    </script>
+
+    <? include ./partials/footer ?>
