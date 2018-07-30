@@ -28,6 +28,13 @@ const blogSchema = new mongoose.Schema({
 });
 const Blog = mongoose.model('blog', blogSchema);
 
+const subSchema = new mongoose.Schema({
+    name: String,
+    surname: String,
+    email: String
+});
+const Subscription = mongoose.model('subscription', subSchema);
+
 // SETTINGS
 
 app.set('view engine', 'ejs');
@@ -83,6 +90,22 @@ app.get('/blogs/about-contact', function(req, res) {
             res.render('about-contact', { blogs: blogs});
         }
     });
+});
+// create signup route
+app.post('/blogs', function(req, res) {
+    const requestedSub = req.body.subscription;
+    requestedSub.body = req.sanitize(requestedSub.body);
+
+    console.log(requestedSub);
+
+    Subscription.create(requestedSub, function(err, createdSub) {
+        if (err) {
+            res.render('about-contact');
+        } else {
+            res.redirect('/blogs');
+        }
+    });
+
 });
 
 // new route

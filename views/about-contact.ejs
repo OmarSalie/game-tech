@@ -27,13 +27,29 @@
 
         <div class="ui two column very relaxed grid">
             <div class="column">
+                <div class="ui huge block header">
+                    Contact Us
+                </div>
                 <div class="ui segment">
                     <div class="ui item">
-                        <p>Pede ac, inceptos etiam, deleniti modi, hac sociosqu pharetra! Gravida augue, fames aenean officia excepteur habitasse aptent perferendis non maxime.</p>
-
-                        <p>Rutrum beatae dolore curae hendrerit dui pharetra, quis sunt? Luctus do aliquam mollitia quia aliquip dignissimos repudiandae ullamcorper iaculis dolorum.</p>
-                        
-                        <p>Voluptates quod deserunt nunc eleifend diam proident ullam placeat eaque perspiciatis repellat, aspernatur iste, malesuada quasi excepturi? Sit nobis penatibus.</p>
+                        <form action="/blogs" method="POST" class="ui form">
+                            <div class="field">
+                                <label>Name</label>
+                                <input type="text" name="subscription[name]" placeholder="Name" required>
+                            </div>
+                            <div class="field">
+                                <label>Surname</label>
+                                <input type="text" name="subscription[surname]" placeholder="Surname" required>
+                            </div>
+                            <div class="field">
+                                <label>Email</label>
+                                <input type="email" name="subscription[email]" placeholder="Email" required>
+                            </div>
+                            <button class="ui black icon button">
+                                Submit
+                                <i class="send icon right"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -41,6 +57,9 @@
                 <span class="divider">and</span>
             </div> -->
             <div class="column">
+                <div class="ui huge block header">
+                    About Game-Tech
+                </div>
                 <div class="ui segment">
                     <div class="ui item">
                         <p>Pede ac, inceptos etiam, deleniti modi, hac sociosqu pharetra! Gravida augue, fames aenean officia excepteur habitasse aptent perferendis non maxime.</p>
